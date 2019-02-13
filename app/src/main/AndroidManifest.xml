@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.sift.face">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+            android:name=".helper.SampleApp"
+            android:allowBackup="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".DetectionActivity"
+                android:label="@string/detection"
+                android:launchMode="singleTop"
+                android:parentActivityName=".MainActivity"
+                android:screenOrientation="portrait" >
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainActivity" />
+        </activity>
+
+        <activity
+                android:name=".log.DetectionLogActivity"
+                android:label="@string/detection_log"
+                android:parentActivityName=".DetectionActivity"
+                android:screenOrientation="portrait" >
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".DetectionActivity" />
+        </activity>
+
+        <activity
+                android:name=".SelectImageActivity"
+                android:label="@string/select_an_image"
+                android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

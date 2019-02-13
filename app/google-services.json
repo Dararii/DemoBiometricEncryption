@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "917961748720",
+    "firebase_url": "https://biometric-sift.firebaseio.com",
+    "project_id": "biometric-sift",
+    "storage_bucket": "biometric-sift.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917961748720:android:d3d068dbe7a038e6",
+        "android_client_info": {
+          "package_name": "com.sift.face"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917961748720-b4hgutcurldrraifecngn42p59uqcv7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sift.face",
+            "certificate_hash": "b95a6f293f9660741bbc95cc895db9d409facbd8"
+          }
+        },
+        {
+          "client_id": "917961748720-9j6dvtbpjqe2at0llejg3j4dkp3f28bf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk1X9PySB-1-3vL5pk3ykeSCtohTER5lA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917961748720-9j6dvtbpjqe2at0llejg3j4dkp3f28bf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
