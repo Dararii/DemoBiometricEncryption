@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.contract.*;
+import com.sift.face.engine.GsonHelper;
 import com.sift.face.helper.ImageHelper;
 import com.sift.face.helper.LogHelper;
 import com.sift.face.helper.SampleApp;
@@ -338,8 +339,8 @@ public class DetectionActivity extends AppCompatActivity {
 
             // Show the face details.
             DecimalFormat formatter = new DecimalFormat("#0.0");
-            String face_description = String.format("Age: %s  Gender: %s\nHair: %s  FacialHair: %s\nMakeup: %s  %s\nForeheadOccluded: %s  Blur: %s\nEyeOccluded: %s  %s\n" +
-                            "MouthOccluded: %s  Noise: %s\nGlassesType: %s\nHeadPose: %s\nAccessories: %s",
+            String face_description = String.format("Age: %s\nGender: %s\nHair: %s\nFacialHair: %s\nMakeup: %s %s\nForeheadOccluded: %s\nBlur: %s\nEyeOccluded: %s  %s\n" +
+                            "MouthOccluded: %s\nNoise: %s\nGlassesType: %s\nHeadPose: %s\nAccessories: %s\nFaceLandmark: %s\n",
                     faces.get(position).faceAttributes.age,
                     faces.get(position).faceAttributes.gender,
                     getHair(faces.get(position).faceAttributes.hair),
@@ -354,8 +355,9 @@ public class DetectionActivity extends AppCompatActivity {
                     faces.get(position).faceAttributes.noise.noiseLevel,
                     faces.get(position).faceAttributes.glasses,
                     getHeadPose(faces.get(position).faceAttributes.headPose),
-                    getAccessories(faces.get(position).faceAttributes.accessories)
-                    );
+                    getAccessories(faces.get(position).faceAttributes.accessories),
+                    GsonHelper.INSTANCE.getGson().toJson(faces.get(position).faceLandmarks)
+            );
             ((TextView) convertView.findViewById(R.id.text_detected_face)).setText(face_description);
 
             return convertView;
